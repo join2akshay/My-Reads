@@ -3,6 +3,7 @@ import * as BooksAPI from './BooksAPI'
 import './App.css'
 import {Route} from 'react-router-dom'
 import MainPage from './MainPage'
+import SearchPage from './SearchPage'
 
 class BooksApp extends React.Component {
   state = {
@@ -39,7 +40,18 @@ moveBooks = (book, shelf) => {
        ( <MainPage books={this.state.books}
          moveBooks={this.moveBooks}
        />)
+       
       }/> 
+<Route
+  path='/Search'
+  render ={() => (
+           < SearchPage
+              books={this.state.books}
+              moveBooks = {this.moveBooks}
+            />
+          )}
+/>
+
        </div>
 
     //    <div className="app">

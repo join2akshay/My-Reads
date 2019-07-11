@@ -1,8 +1,9 @@
 import React from 'react';
 import Book from './Book'
+import {Link} from 'react-router-dom'
 export default  class MainPage extends React.Component{
     render() {
-        // const {books}=this.props.books;
+       
      
         return (
            
@@ -71,6 +72,12 @@ export default  class MainPage extends React.Component{
                     </div>
                 </div>
          </div>
+         <div className="open-search">
+         <Link to='/search'>
+
+              <button onClick={() => this.setState({ showSearchPage: true })}>Add a book</button>
+         </Link>
+            </div>
     </div>
             
         )
