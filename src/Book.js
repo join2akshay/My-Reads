@@ -5,13 +5,20 @@ export default class Book extends React.Component
     render() {
         const {book} = this.props;
         let displayedThumbnail = book.imageLinks ? book.imageLinks.thumbnail : '' ;
+        let value;
         return (
-           
+         
                 <div className="book">
                         <div className="book-top">
                           <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url("${displayedThumbnail}"` }}></div>
                           <div className="book-shelf-changer">
-                            <select>
+                            <select onChange={(e)=>(
+                               this.props.moveBooks(this.props.book,
+                               e.target.value)
+                            )}
+                            value={this.props.currentShelf}
+                            >
+
                               <option value="move" disabled>Move to...</option>
                               <option value="currentlyReading">Currently Reading</option>
                               <option value="wantToRead">Want to Read</option>

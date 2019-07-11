@@ -24,6 +24,7 @@ export default  class MainPage extends React.Component{
                                 <Book
                                 book = {book}
                                 currentShelf= 'currentlyReading'
+                                moveBooks={this.props.moveBooks}
                                 />
                             </li>))
                     }
@@ -42,6 +43,7 @@ export default  class MainPage extends React.Component{
                                 <Book
                                 book = {book}
                                 currentShelf= 'wantToRead'
+                                moveBooks={this.props.moveBooks}
                                 />
                             </li>))
                     }
@@ -60,6 +62,7 @@ export default  class MainPage extends React.Component{
                                 <Book
                                 book = {book}
                                 currentShelf= 'read'
+                                moveBooks={this.props.moveBooks}
                                 />
                             </li>))
                     }
